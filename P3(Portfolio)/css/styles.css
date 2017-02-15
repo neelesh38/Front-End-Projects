@@ -1,0 +1,65 @@
+/* CSS Document */
+
+body {
+	font-family: "Lato", sans-serif ;
+	color: #999 ;
+	font-weight: 300 ;
+	text-align: justify ;
+}
+
+
+.text-thin {
+	font-weight: 100px ;
+}
+
+
+.title-super {
+	font-size: 60px ;
+}
+
+
+.title-logo {
+	margin-top: 20px ;
+	width: auto;;
+	height: auto; ;
+}
+
+
+hr {
+	height: 7px ;
+	background-color: grey ;
+	width: auto ;
+}
+
+
+.image1 {
+	width: auto;
+	border: 2px solid #333;
+	height: auto;
+}
+
+
+.image2 {
+	width: auto;
+	height: auto;
+	border: 1px solid #000;
+}
+
+
+p{
+    color: black;
+}
+
+@media screen and (min-width: 992px) {
+
+    .container {
+        width: 970px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .container {
+        width: 1170px;
+    }
+}

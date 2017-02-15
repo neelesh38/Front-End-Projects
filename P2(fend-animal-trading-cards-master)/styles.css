@@ -1,0 +1,58 @@
+ /* add your CSS here */
+
+.name{
+	font-size:2.2em;
+	margin:auto;
+	font-weight:bold;
+	padding-bottom:2.5px;
+}
+.header
+{
+	border:1px solid #ccc;
+	width:304px;
+	padding:18px;
+	box-shadow: 1px 10px 10px 1px #ccc ;
+	margin:auto;
+}
+.image{
+	border:1px solid #ccc;
+	width:300px;
+	height:auto;
+	margin:auto;
+	margin-bottom:5px;
+	margin-left:1px;
+}
+li{
+	list-style-type:none;
+	margin-left:-35px;
+}
+
+.fact
+{
+	border:1px solid #ccc;
+	padding-left:5px;
+	padding-right:5px;
+	width:300px;
+	margin:auto;
+}
+.details{
+	font-size:1em;
+	text-align:justify;
+	padding-left:3px;
+	padding-right:3px;
+}
+.bold{
+	font-weight:bold;
+	font-variant:normal;
+}
+.italic{
+	font-style:italic;
+}
+.line{
+	padding-left:2px;
+}
+body
+{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:14px;
+}
