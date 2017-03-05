@@ -1,76 +1,50 @@
-<!DOCTYPE html>
+<!Doctype >
 <html>
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title> Neighborhood Map </title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/style.css">
-   </head>
-   <body>
-      <div class="container-fluid">
-            <div class="row">
-                  <div class="col-sm-12 header">
-                     <h1>Orissa Tourism</h1>
-                  </div>
-               </div>
-         <div class="row">
-            <div class="col-md-3">
-               <div class="row site-header">
-                  <div class="col-md-12">
-                        <form>
-                           <div class="form-group">
-                           <input type="text" class="form-control searchbar" placeholder="Search" data-bind="value:filterText">
-                           </div>
-                        </form>
-                     </header>
-                  </div>
-               </div>
-               <div>
-                  <ul data-bind="foreach: locations">
-                     <li data-bind="text:title"></li>
-                  </ul>
-               </div>
-            </div>
-            <div class="col-md-9">
-               <div class="row">
-                  <div class="col-sm-12" id="map"></div>
-                  <div id="map-error">
-                     <h4 data-bind="text: errorDisplay"></h4>
-                  </div>
-               </div>
-               
-            </div>
-         </div>
+<head>
+  <title>neighbourhood map</title>
+  <script src="js\jquery.min.js"></script>
+  <script src="js\knockout.js"></script>
+  <script src="bootstrap/js/bootstrap.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row" style="padding:10px">
+      <div class="col-md-12 header">
+        <h1>Odisha Tourism </h1>
       </div>
-      </script>
-      <script src="js/jquery.min.js"></script>
-      <script src="js/knockout.js"></script>
-      <script src="js/app.js"></script>
-      <script>
-         var map, infoWindow;
-         
-         function initMap() {
-             map = new google.maps.Map(
-                 document.getElementById('map'), {
-                     center: {
-                         lat: 19.8134,
-                         lng: 85.8315
-                     },
-                     zoom: 10,
-                     mapTypeControl: false
-                 }
-             );
-             infowindow = new google.maps.InfoWindow();
-         
-             ko.applyBindings(new viewModel());
-         }
-         
-         function mapError() {
-             document.getElementById('map-error').innerHTML = "Error in Map!";
-         }
-      </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBZ21xB1ehukTOLW3TuH0hz2_CyQmYQBg&callback=initMap" onerror="mapError()" async defer></script>
-   </body>
+    </div>
+    <div class="row">
+      <div class="col-md-12 nav nav-tabs" >
+        <ul data-bind="foreach:markers" class="nav navbar-nav">
+          <li class="list" data-bind="text:title,click:$parent.selectAll"></li>
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12" id="map"></div>
+    </div>
+  </div>
+  <script>
+  var map,infowindow;
+  function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+              center: {  lat: 19.8134,lng: 85.8315},
+              zoom: 10
+          });
+          ko.applyBindings(new viewModel());
+  }
+  </script>
+  <script src="js\app.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBZ21xB1ehukTOLW3TuH0hz2_CyQmYQBg&libraries=geometry&v=3&callback=initMap">
+</script>
+</body>
 </html>
