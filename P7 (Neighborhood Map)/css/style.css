@@ -1,6 +1,6 @@
 .header
 {
-	background-color: #0375B4;
+	background-color: #03C;
 	width: 100%;
 	text-align: center;
 	color: white;
@@ -15,7 +15,6 @@
 	padding: 10px;
 	margin-top: 50px;
 	position: relative;
-
 }
 .list
 {
